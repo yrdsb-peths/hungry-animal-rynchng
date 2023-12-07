@@ -113,7 +113,7 @@ public class MyWorld extends World
         lives--;
         livesLabel.setValue("Lives: "+ lives);
         
-        if (lives == 0)
+        if (lives == 0 || score < 0)
         {
             gameOver();
         }

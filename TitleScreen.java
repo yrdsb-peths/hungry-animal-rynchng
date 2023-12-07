@@ -40,12 +40,14 @@ public class TitleScreen extends World
         Elephant elephant = new Elephant();
         addObject(elephant,100,70);
         Label label = new Label("Press <space> to start", 50);
-        addObject(label,300,330);
+        addObject(label,300,365);
         Label label2 = new Label("Use \u2190 and \u2192 to move", 50);
         addObject(label2,300,150);
         Label label3 = new Label("You have 5 lives", 60);
         addObject(label3,300,210);
-        Label label4 = new Label("Dont lose any apples or hit bombs!", 40);
-        addObject(label4,300,270);
+        Label label4 = new Label("Dont run out of lives or let ", 50);
+        addObject(label4,300,260);
+        Label label5 = new Label("your score go below 0!", 50);
+        addObject(label5,300,310);
     }
 }

@@ -110,7 +110,6 @@ public class Elephant extends Actor
     
     public void border()
     {
-        int leftBorder = 0;
         int rightBorder = 600;
         
         if (getX() + 40 >= rightBorder)
