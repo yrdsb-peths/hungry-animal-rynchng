@@ -11,6 +11,7 @@ public class Elephant extends Actor
     GreenfootSound elephantSound = new GreenfootSound("elephantNoise.mp3");
     GreenfootImage[] idleRight = new GreenfootImage[8];
     GreenfootImage[] idleLeft = new GreenfootImage[8];
+    GreenfootSound explosion = new GreenfootSound("explosion.mp3");
     
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer();
@@ -62,12 +63,12 @@ public class Elephant extends Actor
     {
         if (Greenfoot.isKeyDown("left"))
         {
-            move(-2);
+            move(-3);
             facing = "left";
         }
         else if (Greenfoot.isKeyDown("right"))
         {
-            move(2);
+            move(3);
             facing = "right";
         }
         
@@ -76,6 +77,10 @@ public class Elephant extends Actor
         
         // animates the elephant's movement
         animate();
+        
+        explode();
+        
+        border();
     }
     
     public void eat()
@@ -87,6 +92,34 @@ public class Elephant extends Actor
             world.createApple();
             world.increaseScore();
             elephantSound.play();
+        }
+    }
+    
+    public void explode()
+    {
+        if (isTouching(Bomb.class))
+        {
+            removeTouching(Bomb.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createBomb();
+            world.decreaseScore(2);
+            world.decreaseLives();
+            explosion.play();
+        }
+    }
+    
+    public void border()
+    {
+        int leftBorder = 0;
+        int rightBorder = 600;
+        
+        if (getX() + 40 >= rightBorder)
+        {
+            setLocation(rightBorder - 40, 300);
+        }
+        else if (getX() - 40 <= 0)
+        {
+            setLocation(40, 300);
         }
     }
 }

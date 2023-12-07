@@ -1,17 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Apple here.
+ * Write a description of class Bomb here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Apple extends Actor
+public class Bomb extends Actor
 {
     int speed = 1;
-    int losses = 0;
     /**
-     * Act - do whatever the Apple wants to do. This method is called whenever
+     * Act - do whatever the Bomb wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
@@ -23,9 +22,7 @@ public class Apple extends Actor
         if(getY() >= world.getHeight())
         {
             world.removeObject(this);
-            world.createApple();
-            world.decreaseScore(1);
-            world.decreaseLives();
+            world.createBomb();
         }
     }
 }
