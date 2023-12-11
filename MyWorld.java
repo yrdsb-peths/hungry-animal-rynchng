@@ -52,7 +52,7 @@ public class MyWorld extends World
         score++;
         scoreLabel.setValue("Score: " + score);
         
-        if (score == 10)
+        if (score == 2)
         {
             sendBombs = true;
         }
@@ -101,11 +101,9 @@ public class MyWorld extends World
             x = 900;
         }
         
-        int y = -40;
+        int y = -100;
         
         addObject(bomb, x, y);
-        
-        System.out.println(x);
     }
     
     public void decreaseLives()

@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bomb extends Actor
 {
-    int speed = 1;
+    int speed = 2 + Greenfoot.getRandomNumber(3);
     /**
      * Act - do whatever the Bomb wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
